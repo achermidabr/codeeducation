@@ -1,5 +1,7 @@
 # Projetos
 desafionet/mysql/data/*
+!desafionet/mysql/data/.gitkeep
+
 desafionet/node_modules/
 
 # Logs
