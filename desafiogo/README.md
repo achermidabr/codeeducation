@@ -1,1 +1,1 @@
-docker run -it --rm --name go-printinfo achermida/codeeducation
+docker run -it --rm achermida/codeeducation
