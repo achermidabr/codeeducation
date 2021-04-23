@@ -8,37 +8,38 @@ const config = {
     database: 'nodedb'
 }
 const mysql = require('mysql')
+const sqlSelect = 'SELECT name FROM people'
+const sqlInsert = 'INSERT INTO people(name) values(?)'
 
 app.get('/', (req, res) => {
     const connection = mysql.createConnection(config)
 
     let name = req.query.name;
     if(typeof name !== 'undefined' && name){
-        let sql = "INSERT INTO people(name) values(?)"
-        connection.query(sql,name, function (err, result) {
-            if (err) throw err;
-            console.log('Nome ' + name + ' adicionado')
-        })
+        insertSQL(name, connection)
     }
 
-    let finalResult = '<h1>Full Cycle Rocks!</h1><ul>'
-
-    sql = "SELECT name FROM people"
-    connection.query("SELECT name FROM people", function (err, result, fields) {
+    var finalResult = '<h1>Full Cycle Rocks!</h1><ul>'
+    connection.query(sqlSelect, function (err, result, fields) {
         if (err) throw err;
         console.log("Result:" + result);
         result.forEach(element => {
-            finalResult = finalResult + '<li>' + element.name + '</li>'
+            finalResult = finalResult + '<li>' + element.name + '</li>' 
         });
-        connection.end()
         
         finalResult = finalResult + '</ul>'
         console.log("FinalResult: " + finalResult);
-
+        connection.end()
         res.send(finalResult)
-      });
-
+    });
 })
+
+function insertSQL(name, connection){
+        connection.query(sqlInsert,name, function (err, result) {
+            if (err) throw err;
+            console.log('Nome ' + name + ' adicionado')
+        })
+}
 
 app.listen(port, () => {
     console.log('Rodando na porta ' + port)

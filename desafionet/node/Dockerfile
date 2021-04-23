@@ -1,9 +1,12 @@
 FROM node:15
 
 WORKDIR /usr/src/app
+EXPOSE 3000
 
-RUN apt-get update && apt-get install -y wget
-RUN npm i --save-dev mysql
+# RUN apt-get update \
+#     && apt-get install -y wget
+# RUN npm i --save-dev mysql &&\
+RUN npm install
 
 
 # ENV DOCKERIZE_VERSION v0.6.1
@@ -11,6 +14,6 @@ RUN npm i --save-dev mysql
 #     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
 #     && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
-EXPOSE 3000
+COPY . .
 
 CMD ["node","index.js"]
