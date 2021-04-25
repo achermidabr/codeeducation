@@ -6,7 +6,7 @@ EXPOSE 3000
 # RUN apt-get update \
 #     && apt-get install -y wget
 # RUN npm i --save-dev mysql &&\
-RUN npm install
+RUN npm install -g nodemon
 
 
 # ENV DOCKERIZE_VERSION v0.6.1

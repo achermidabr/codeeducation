@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
         insertSQL(name, connection)
     }
 
-    var finalResult = '<h1>Full Cycle Rocks!</h1><ul>'
+    var finalResult = '<h1>Full Cycle Rocks!!!</h1><ul>'
     connection.query(sqlSelect, function (err, result, fields) {
         if (err) throw err;
         console.log("Result:" + result);
