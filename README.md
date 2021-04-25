@@ -1,6 +1,8 @@
 # codeeducation
 
-## Desafios Iniciando com Docker
+Estou fazendo o treinamento FullCycle da [Code Education](https://code.education/), e no treinamento existem desafios para fixar melhor os conhecimentos. As respostas a esses desafios são colocadas no Github para avaliação da equipe técnica, e estas são as minhas respostas.
+
+## Módulo Iniciando com Docker
 
 ### Primeiro desafio: Desafio Go
 
