@@ -4,9 +4,13 @@
 
 use App\Models\Genre;
 use Faker\Generator as Faker;
+use Ramsey\Uuid\Uuid;
 
 $factory->define(Genre::class, function (Faker $faker) {
     return [
-        //
+        'id' => Uuid::uuid4(),
+        'name' => $faker->monthName
     ];
 });
+
+
