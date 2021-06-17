@@ -23,3 +23,9 @@ Só acessar a lista: http://localhost:8080
 Para cadastrar um novo nome: http://localhost:8080?name=Alexandre
 
 Infos: desafionet/README.md
+
+### Serviços do Catálogo
+
+Pasta: app/code-micro-videos/
+
+Informações no README.md interno
